@@ -1,0 +1,93 @@
+@import url('https://fonts.googleapis.com/css2?family=Grand+Hotel&display=swap');
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --color-sage: #8A9A86;
+    --color-sage-light: #EEF2ED;
+    --color-sage-dark: #586955;
+    --color-blush: #F4E3E3;
+    --color-rose: #B76E79;
+    --color-terracotta: #E07A5F;
+    --color-ivory: #FAF7F2;
+    --color-gold: #D4AF37;
+  }
+}
+
+.font-instagram-logo {
+  font-family: 'Grand Hotel', cursive;
+}
+
+.font-serif-cormorant {
+  font-family: var(--font-cormorant), Georgia, serif;
+}
+
+.font-cursive {
+  font-family: var(--font-great-vibes), cursive;
+}
+
+.font-sans-jakarta {
+  font-family: var(--font-jakarta), sans-serif;
+}
+
+/* Glassmorphism utilities */
+.glass-card {
+  background: rgba(255, 255, 255, 0.75);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.6);
+}
+
+.glass-card-dark {
+  background: rgba(45, 55, 72, 0.8);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Floating animation */
+@keyframes floatSlow {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-8px) rotate(1deg);
+  }
+}
+
+.animate-float-slow {
+  animation: floatSlow 6s ease-in-out infinite;
+}
+
+@keyframes pulseGlow {
+  0%, 100% {
+    opacity: 0.6;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.95;
+    transform: scale(1.03);
+  }
+}
+
+.animate-pulse-glow {
+  animation: pulseGlow 4s ease-in-out infinite;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #FAF7F2;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #B76E79;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #8A9A86;
+}
