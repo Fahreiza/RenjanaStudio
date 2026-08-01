@@ -36,6 +36,8 @@ export interface LoveStoryItem {
   year: string;
   title: string;
   description: string;
+  dateRange?: string;
+  imageUrl?: string;
 }
 
 export interface BankAccount {
