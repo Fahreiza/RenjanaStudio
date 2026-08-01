@@ -44,8 +44,8 @@ export default function LinkedinProfileIntro({
             <span className="bg-[#0A66C2] text-white px-2 py-0.5 rounded-full">ID</span>
             <span className="text-zinc-500 px-2 py-0.5">EN</span>
           </div>
-          <div className="w-7.5 h-7.5 rounded-full bg-[#0A66C2] text-white flex items-center justify-center font-semibold text-xs shadow-xs">
-            👤
+          <div className="w-8 h-8 rounded-full bg-white text-xl flex items-center justify-center shrink-0 shadow-xs select-none">
+            🧕🏻
           </div>
         </div>
       </header>
@@ -121,7 +121,7 @@ export default function LinkedinProfileIntro({
 
             {/* Location & Statistics */}
             <div className="space-y-2 pt-1 border-t border-zinc-100">
-              <div className="flex items-center gap-2 text-xs text-zinc-600">
+              <div className="flex items-center gap-2 text-zinc-600 text-xs">
                 <MapPin className="w-4 h-4 text-zinc-700 shrink-0" />
                 <span className="font-semibold text-zinc-800">{venueName}</span>
               </div>

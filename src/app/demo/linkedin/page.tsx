@@ -172,8 +172,8 @@ function LinkedInContent() {
                 <span className="bg-[#0A66C2] text-white px-2 py-0.5 rounded-full">ID</span>
                 <span className="text-zinc-500 px-2 py-0.5">EN</span>
               </div>
-              <div className="w-7.5 h-7.5 rounded-full bg-[#0A66C2] text-white flex items-center justify-center font-semibold text-xs shadow-xs">
-                👤
+              <div className="w-8 h-8 rounded-full bg-white text-xl flex items-center justify-center shrink-0 shadow-xs select-none">
+                🧕🏻
               </div>
             </div>
           </header>
@@ -231,8 +231,8 @@ function LinkedInContent() {
                 <div className="h-6 w-[1px] bg-zinc-200" />
 
                 <div className="flex items-center gap-1.5 cursor-pointer">
-                  <div className="w-7 h-7 rounded-full bg-[#0A66C2] text-white flex items-center justify-center font-semibold text-xs">
-                    👤
+                  <div className="w-8 h-8 rounded-full bg-white text-xl flex items-center justify-center shrink-0 shadow-xs select-none">
+                    🧕🏻
                   </div>
                   <span className="text-[11px] font-semibold text-[#000000e6]">Saya ▾</span>
                 </div>
