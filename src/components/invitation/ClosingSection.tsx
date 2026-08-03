@@ -8,6 +8,7 @@ interface ClosingSectionProps {
   brideName: string;
   accentColor?: string;
   themeName?: string;
+  isLightTheme?: boolean;
 }
 
 export default function ClosingSection({
@@ -15,6 +16,7 @@ export default function ClosingSection({
   brideName,
   accentColor = '#1DB954',
   themeName = 'Spotify Edition',
+  isLightTheme = false,
 }: ClosingSectionProps) {
   return (
     <footer className="py-12 px-4 text-center max-w-3xl mx-auto space-y-8 select-none">
@@ -23,7 +25,11 @@ export default function ClosingSection({
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.8 }}
-        className="relative bg-gradient-to-b from-[#181818] via-[#141414] to-[#0f0f0f] border border-zinc-800/80 rounded-3xl p-6 sm:p-10 shadow-2xl overflow-hidden space-y-8"
+        className={`relative border rounded-3xl p-6 sm:p-10 shadow-2xl overflow-hidden space-y-8 ${
+          isLightTheme
+            ? 'bg-white/95 border-[#D4AF37]/40 text-[#2D3748]'
+            : 'bg-gradient-to-b from-[#181818] via-[#141414] to-[#0f0f0f] border-zinc-800/80 text-white'
+        }`}
       >
         {/* Glowing Ambient Light */}
         <div
@@ -46,16 +52,16 @@ export default function ClosingSection({
 
         {/* Main Heartfelt Message */}
         <div className="relative z-10 max-w-lg mx-auto space-y-4">
-          <p className="text-sm sm:text-base text-zinc-300 leading-relaxed font-sans font-medium px-2">
+          <p className={`text-sm sm:text-base leading-relaxed font-sans font-medium px-2 ${isLightTheme ? 'text-zinc-700' : 'text-zinc-300'}`}>
             &ldquo;Merupakan suatu kehormatan dan kebahagiaan bagi kami apabila Bapak/Ibu/Saudara/i berkenan hadir dan memberikan doa restu kepada kami.&rdquo;
           </p>
         </div>
 
         {/* Decorative Divider */}
         <div className="relative z-10 flex items-center justify-center gap-3">
-          <div className="w-16 h-[1px] bg-gradient-to-r from-transparent to-zinc-700" />
+          <div className={`w-16 h-[1px] ${isLightTheme ? 'bg-zinc-300' : 'bg-gradient-to-r from-transparent to-zinc-700'}`} />
           <Heart className="w-4 h-4 fill-current animate-pulse" style={{ color: accentColor }} />
-          <div className="w-16 h-[1px] bg-gradient-to-l from-transparent to-zinc-700" />
+          <div className={`w-16 h-[1px] ${isLightTheme ? 'bg-zinc-300' : 'bg-gradient-to-l from-transparent to-zinc-700'}`} />
         </div>
 
         {/* Happy Couple & Family Section */}
@@ -63,21 +69,21 @@ export default function ClosingSection({
           <span className="text-[11px] uppercase tracking-[0.3em] font-extrabold font-mono block" style={{ color: accentColor }}>
             KAMI YANG BERBAHAGIA
           </span>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-white tracking-tight font-sans">
+          <h2 className={`text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight font-serif ${isLightTheme ? 'text-[#C48B96]' : 'text-white'}`}>
             {groomName} <span className="font-serif" style={{ color: accentColor }}>&amp;</span> {brideName}
           </h2>
-          <p className="text-xs sm:text-sm text-zinc-400 font-sans tracking-wide">
+          <p className={`text-xs sm:text-sm font-sans tracking-wide ${isLightTheme ? 'text-zinc-500' : 'text-zinc-400'}`}>
             beserta keluarga besar kedua mempelai
           </p>
         </div>
 
         {/* Renjana Studio Watermark */}
-        <div className="relative z-10 pt-6 border-t border-zinc-800/80 text-[11px] text-zinc-500 font-sans space-y-1">
+        <div className={`relative z-10 pt-6 border-t text-[11px] font-sans space-y-1 ${isLightTheme ? 'border-zinc-200 text-zinc-500' : 'border-zinc-800/80 text-zinc-500'}`}>
           <p>
             Dibuat dengan cinta oleh{' '}
             <span className="font-bold" style={{ color: accentColor }}>Renjana Studio</span>
           </p>
-          <p className="font-mono text-[10px] text-zinc-600">
+          <p className="font-mono text-[10px] opacity-70">
             &copy; 2026 Renjana Studio &bull; {themeName} Wedding Invitation
           </p>
         </div>

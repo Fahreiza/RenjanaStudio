@@ -67,34 +67,44 @@ export default function WhatsappLoveStoryQuote({ timeline }: WhatsappLoveStoryQu
               className={`flex flex-col ${idx % 2 === 0 ? 'items-start' : 'items-end'}`}
             >
               <div
-                className={`max-w-[90%] sm:max-w-[80%] rounded-2xl p-4 space-y-2 shadow-lg ${
+                className={`max-w-[92%] sm:max-w-[85%] rounded-2xl p-4 space-y-2.5 shadow-lg ${
                   idx % 2 === 0
                     ? 'bg-[#202C33] rounded-tl-none border border-zinc-800'
                     : 'bg-[#005C4B] rounded-tr-none text-white border border-emerald-500/30'
                 }`}
               >
-                <div className="flex items-center justify-between border-b border-white/10 pb-1">
-                  <span className="font-extrabold text-xs text-[#25D366]">{item.year}</span>
-                  <span className="text-[10px] text-zinc-400 font-mono">Chat #{idx + 1}</span>
+                <div className="flex items-center justify-between border-b border-white/10 pb-1.5">
+                  <span className="font-black text-xs text-[#25D366] font-mono">{item.year}</span>
+                  <span className="text-[10px] text-zinc-400 font-mono flex items-center gap-1">
+                    Voice Note #{idx + 1} <Mic className="w-3 h-3 text-[#25D366]" />
+                  </span>
                 </div>
 
-                <h4 className="text-sm font-bold text-white">{item.title}</h4>
+                <h4 className="text-sm font-extrabold text-white">{item.title}</h4>
                 <p className="text-xs leading-relaxed text-zinc-200 font-sans">
                   {item.description}
                 </p>
 
-                {/* WA Voice Note Audio Bar Simulation */}
-                <div className="pt-2 flex items-center gap-3">
-                  <div className="w-8 h-8 rounded-full bg-[#25D366] text-black flex items-center justify-center font-bold shrink-0">
-                    <Play className="w-3.5 h-3.5 fill-current ml-0.5" />
+                {/* WA Voice Note Waveform Bar Component */}
+                <div className="pt-2 border-t border-white/10 flex items-center gap-3">
+                  <div className="w-8 h-8 rounded-full bg-[#25D366] text-black flex items-center justify-center font-bold shrink-0 shadow">
+                    <Play className="w-4 h-4 fill-current ml-0.5" />
                   </div>
+
                   <div className="flex-1 space-y-1">
-                    <div className="h-1.5 bg-white/30 rounded-full overflow-hidden">
-                      <div className="h-full bg-[#25D366] w-2/3" />
+                    <div className="flex items-end gap-0.5 h-4 px-1">
+                      {[30, 60, 40, 80, 50, 90, 40, 70, 30, 85, 60, 40, 80, 50].map((height, i) => (
+                        <div
+                          key={i}
+                          className={`flex-1 rounded-full ${i < 7 ? 'bg-[#25D366]' : 'bg-white/40'}`}
+                          style={{ height: `${height}%` }}
+                        />
+                      ))}
                     </div>
-                    <span className="text-[9px] text-zinc-400 block text-right font-mono">
-                      0:42 &bull; <CheckCheck className="w-3 h-3 inline text-sky-400" />
-                    </span>
+                    <div className="flex items-center justify-between text-[9.5px] text-zinc-300 font-mono">
+                      <span>0:42</span>
+                      <CheckCheck className="w-3.5 h-3.5 text-sky-400" />
+                    </div>
                   </div>
                 </div>
               </div>

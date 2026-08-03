@@ -2,13 +2,12 @@
 
 import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { Calendar as CalendarIcon, Clock } from 'lucide-react';
 
-interface WhatsappCountdownProps {
+interface MinimalistCountdownProps {
   targetDate: string;
 }
 
-export default function WhatsappCountdown({ targetDate }: WhatsappCountdownProps) {
+export default function MinimalistCountdown({ targetDate }: MinimalistCountdownProps) {
   const [timeLeft, setTimeLeft] = useState({
     days: 0,
     hours: 0,
@@ -36,10 +35,9 @@ export default function WhatsappCountdown({ targetDate }: WhatsappCountdownProps
     return () => clearInterval(timer);
   }, [targetDate]);
 
-  // Calendar Export Generators
   const handleGoogleCalendar = () => {
     const title = encodeURIComponent('Pernikahan Fahreiza & Amanda');
-    const details = encodeURIComponent('Acara Pernikahan Fahreiza & Amanda - Undangan Resmi Wedapp');
+    const details = encodeURIComponent('Acara Pernikahan Fahreiza & Amanda - Minimalist Luxury Edition');
     const location = encodeURIComponent('Grand Ballroom Hotel Mulia, Jakarta');
     const url = `https://calendar.google.com/calendar/render?action=TEMPLATE&text=${title}&details=${details}&location=${location}&dates=20261121T080000Z/20261121T130000Z`;
     window.open(url, '_blank');
@@ -68,108 +66,107 @@ END:VCALENDAR`;
 
   const handleOutlookCalendar = () => {
     const title = encodeURIComponent('Pernikahan Fahreiza & Amanda');
-    const details = encodeURIComponent('Acara Pernikahan Fahreiza & Amanda - Undangan Resmi Wedapp');
+    const details = encodeURIComponent('Acara Pernikahan Fahreiza & Amanda - Minimalist Luxury Edition');
     const location = encodeURIComponent('Grand Ballroom Hotel Mulia, Jakarta');
     const url = `https://outlook.live.com/calendar/0/deeplink/compose?path=/calendar/action/compose&rru=addevent&subject=${title}&body=${details}&location=${location}&startdt=2026-11-21T08:00:00Z&enddt=2026-11-21T13:00:00Z`;
     window.open(url, '_blank');
   };
 
   return (
-    <section className="space-y-3 overflow-hidden w-full max-w-xl mx-auto">
-      {/* Subtitle & Title Matched EXACTLY with Reference Screenshot */}
-      <div className="space-y-0.5 text-left">
-        <span className="text-[11px] font-extrabold text-[#00A884] uppercase tracking-wider block">
-          STATUS &bull; PESAN DISEMATKAN
+    <section className="space-y-8 overflow-hidden w-full max-w-xl mx-auto px-4 py-8">
+      {/* Title */}
+      <div className="text-center space-y-1.5">
+        <span className="text-xs uppercase tracking-[0.35em] text-[#7F9481] font-bold block">
+          Hitung Mundur Acara
         </span>
-        <h2 className="text-xl sm:text-2xl font-black text-white tracking-tight">
+        <h2 className="font-serif text-3xl sm:text-4xl text-[#C48B96] font-bold">
           Menanti Hari Bahagia
         </h2>
+        <div className="w-16 h-[1px] bg-[#D4AF37] mx-auto opacity-70 mt-2" />
       </div>
 
-      {/* Main Countdown Container (Dark Card bg-[#1F2C34]) */}
       <motion.div
-        initial={{ opacity: 0, y: 10 }}
+        initial={{ opacity: 0, y: 15 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
-        className="bg-[#1F2C34] border border-zinc-800 rounded-2xl p-4 sm:p-5 space-y-4 shadow-xl select-none"
+        className="bg-white/90 border border-[#D4AF37]/40 rounded-3xl p-6 sm:p-7 space-y-6 shadow-2xl select-none text-center backdrop-blur-md relative overflow-hidden"
       >
-        {/* 4 Top Story Segment Progress Lines */}
-        <div className="flex gap-1.5 w-full">
-          <div className="flex-1 h-0.5 rounded-full bg-[#00A884]" />
-          <div className="flex-1 h-0.5 rounded-full bg-[#00A884]" />
-          <div className="flex-1 h-0.5 rounded-full bg-[#00A884]/60" />
-          <div className="flex-1 h-0.5 rounded-full bg-zinc-700" />
+        {/* 4 Top Progress Lines */}
+        <div className="flex gap-2 w-full">
+          <div className="flex-1 h-0.5 rounded-full bg-[#7F9481]" />
+          <div className="flex-1 h-0.5 rounded-full bg-[#7F9481]" />
+          <div className="flex-1 h-0.5 rounded-full bg-[#7F9481]/60" />
+          <div className="flex-1 h-0.5 rounded-full bg-zinc-200" />
         </div>
 
-        {/* Horizontal Countdown Format: 78 HARI | 10 JAM | 21 MENIT | 50 DETIK */}
-        <div className="bg-[#111B21] border border-zinc-800 rounded-xl p-3.5 flex items-center justify-around text-center">
+        {/* Horizontal Countdown Format with Gold Vertical Dividers */}
+        <div className="bg-[#F9F6F0] border border-[#7F9481]/30 rounded-2xl p-4 flex items-center justify-around text-center shadow-inner">
           <div className="flex-1">
-            <span className="text-lg sm:text-xl font-black text-white font-mono leading-none block">
+            <span className="text-2xl sm:text-3xl font-black text-[#2D3748] font-mono leading-none block">
               {String(timeLeft.days).padStart(2, '0')}
             </span>
-            <span className="text-[9px] font-extrabold text-[#00A884] uppercase tracking-widest block pt-0.5">
+            <span className="text-[9px] font-extrabold text-[#7F9481] uppercase tracking-widest block pt-1.5">
               HARI
             </span>
           </div>
 
-          <div className="w-[1px] h-7 bg-zinc-800" />
+          <div className="w-[1px] h-8 bg-[#D4AF37]/60" />
 
           <div className="flex-1">
-            <span className="text-lg sm:text-xl font-black text-white font-mono leading-none block">
+            <span className="text-2xl sm:text-3xl font-black text-[#2D3748] font-mono leading-none block">
               {String(timeLeft.hours).padStart(2, '0')}
             </span>
-            <span className="text-[9px] font-extrabold text-[#00A884] uppercase tracking-widest block pt-0.5">
+            <span className="text-[9px] font-extrabold text-[#7F9481] uppercase tracking-widest block pt-1.5">
               JAM
             </span>
           </div>
 
-          <div className="w-[1px] h-7 bg-zinc-800" />
+          <div className="w-[1px] h-8 bg-[#D4AF37]/60" />
 
           <div className="flex-1">
-            <span className="text-lg sm:text-xl font-black text-white font-mono leading-none block">
+            <span className="text-2xl sm:text-3xl font-black text-[#2D3748] font-mono leading-none block">
               {String(timeLeft.minutes).padStart(2, '0')}
             </span>
-            <span className="text-[9px] font-extrabold text-[#00A884] uppercase tracking-widest block pt-0.5">
+            <span className="text-[9px] font-extrabold text-[#7F9481] uppercase tracking-widest block pt-1.5">
               MENIT
             </span>
           </div>
 
-          <div className="w-[1px] h-7 bg-zinc-800" />
+          <div className="w-[1px] h-8 bg-[#D4AF37]/60" />
 
           <div className="flex-1">
-            <span className="text-lg sm:text-xl font-black text-white font-mono leading-none block text-[#00A884] animate-pulse">
+            <span className="text-2xl sm:text-3xl font-black text-[#C48B96] font-mono leading-none block animate-pulse">
               {String(timeLeft.seconds).padStart(2, '0')}
             </span>
-            <span className="text-[9px] font-extrabold text-[#00A884] uppercase tracking-widest block pt-0.5">
+            <span className="text-[9px] font-extrabold text-[#C48B96] uppercase tracking-widest block pt-1.5">
               DETIK
             </span>
           </div>
         </div>
 
-        {/* Subtitle Event Date */}
-        <p className="text-center text-xs text-zinc-300 font-medium">
-          Acara dimulai <strong className="text-white">Sabtu, 21 November 2026</strong>
+        <p className="text-xs text-zinc-500 font-serif italic">
+          Acara akan diselenggarakan pada <strong className="text-[#2D3748]">Sabtu, 21 November 2026</strong>
         </p>
 
         {/* 3 Calendar Export Buttons */}
-        <div className="grid grid-cols-3 gap-2 pt-1">
+        <div className="grid grid-cols-3 gap-2.5 pt-1">
           <button
             onClick={handleGoogleCalendar}
-            className="py-2.5 px-2 bg-[#202C33] hover:bg-[#00A884] hover:text-black border border-zinc-700 rounded-xl text-xs font-extrabold text-zinc-200 transition-all flex items-center justify-center gap-1 cursor-pointer"
+            className="py-3 px-2 bg-white hover:bg-[#7F9481] hover:text-white border border-[#7F9481]/40 rounded-xl text-xs font-bold text-[#2D3748] transition-all flex items-center justify-center gap-1 cursor-pointer shadow-xs"
           >
             <span>🗓️ Google</span>
           </button>
 
           <button
             onClick={handleAppleCalendar}
-            className="py-2.5 px-2 bg-[#202C33] hover:bg-[#00A884] hover:text-black border border-zinc-700 rounded-xl text-xs font-extrabold text-zinc-200 transition-all flex items-center justify-center gap-1 cursor-pointer"
+            className="py-3 px-2 bg-white hover:bg-[#7F9481] hover:text-white border border-[#7F9481]/40 rounded-xl text-xs font-bold text-[#2D3748] transition-all flex items-center justify-center gap-1 cursor-pointer shadow-xs"
           >
             <span>🗓️ Apple</span>
           </button>
 
           <button
             onClick={handleOutlookCalendar}
-            className="py-2.5 px-2 bg-[#202C33] hover:bg-[#00A884] hover:text-black border border-zinc-700 rounded-xl text-xs font-extrabold text-zinc-200 transition-all flex items-center justify-center gap-1 cursor-pointer"
+            className="py-3 px-2 bg-white hover:bg-[#7F9481] hover:text-white border border-[#7F9481]/40 rounded-xl text-xs font-bold text-[#2D3748] transition-all flex items-center justify-center gap-1 cursor-pointer shadow-xs"
           >
             <span>🗓️ Outlook</span>
           </button>

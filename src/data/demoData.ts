@@ -74,7 +74,6 @@ export const FAHREIZA_AMANDA_DATA: WeddingData = {
     '/assets/images/gallery-6.webp',
     '/assets/images/sm-WANITA.webp',
     '/assets/images/sm-PRIA.webp',
-    '/assets/images/p-1-1-3.jpg',
   ],
   bankAccounts: [
     {

@@ -144,7 +144,7 @@ export const CATALOG_ITEMS: CatalogItem[] = [
     discountPrice: 'Rp 99.000',
     colorScheme: ['#8A9A86', '#F4E3E3', '#B76E79', '#FAF7F2'],
     thumbnailUrl: '/assets/images/gallery-3.webp',
-    demoUrl: '/demo/modern-romantic',
+    demoUrl: '/demo/minimalist',
     isPopular: true,
   },
   {

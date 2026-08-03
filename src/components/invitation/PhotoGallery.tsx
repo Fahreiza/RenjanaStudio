@@ -24,6 +24,8 @@ export default function PhotoGallery({ photos }: PhotoGalleryProps) {
     }
   };
 
+  const displayedPhotos = photos.slice(0, 9);
+
   return (
     <section className="py-16 px-4 max-w-5xl mx-auto space-y-10">
       <div className="text-center space-y-2">
@@ -38,7 +40,7 @@ export default function PhotoGallery({ photos }: PhotoGalleryProps) {
 
       {/* Grid of Photos */}
       <div className="grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-6">
-        {photos.map((photoUrl, index) => (
+        {displayedPhotos.map((photoUrl, index) => (
           <motion.div
             key={index}
             initial={{ opacity: 0, scale: 0.95 }}

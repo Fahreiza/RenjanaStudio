@@ -23,7 +23,7 @@ import MusicPlayer from '@/components/invitation/MusicPlayer';
 
 import { FAHREIZA_AMANDA_DATA } from '@/data/demoData';
 
-function ModernRomanticContent() {
+function MinimalistContent() {
   const searchParams = useSearchParams();
   const guestNameParam = searchParams.get('to') || 'Tamu Undangan';
 
@@ -109,6 +109,45 @@ function ModernRomanticContent() {
       {isOpen && (
         <div className="min-h-screen relative z-10 pb-16">
           <MusicPlayer isPlaying={isPlayingAudio} onTogglePlay={handleToggleAudio} />
+
+          {/* ── Natural Scattered Florals (absolute, change as you scroll) ── */}
+          {/* LEFT SIDE */}
+          {[
+            { src: '/assets/images/TEMA-01-BUNGA-01-co-1-2.png',                       top: 120,  size: 90,  opacity: 0.55, rotate: -15,  left: true  },
+            { src: '/assets/images/TEMA-01-BUNGA-02-CO-e1721803686726-1-2.webp',       top: 560,  size: 80,  opacity: 0.45, rotate: 10,   left: false },
+            { src: '/assets/images/TEMA-01-BUNGA-03-CO-e1721803728780-1-2.webp',       top: 1050, size: 100, opacity: 0.5,  rotate: -8,   left: true  },
+            { src: '/assets/images/TEMA-01-BUNGA-01-bawah-e1721804781634-1-2.webp',    top: 1500, size: 75,  opacity: 0.45, rotate: 20,   left: false },
+            { src: '/assets/images/TEMA-01-BUNGA-04-e1721804205400-1-2.webp',          top: 1950, size: 95,  opacity: 0.55, rotate: -20,  left: true  },
+            { src: '/assets/images/TEMA-01-BUNGA-02bawah-e1721804937768-1-2.webp',     top: 2400, size: 80,  opacity: 0.4,  rotate: 12,   left: false },
+            { src: '/assets/images/bunga-akhir-tema-01-new-1-1-2.webp',                top: 2900, size: 105, opacity: 0.5,  rotate: -10,  left: true  },
+            { src: '/assets/images/TEMA-01-BUNGA-05-e1721804339713-1-2.webp',          top: 3400, size: 85,  opacity: 0.45, rotate: 18,   left: false },
+            { src: '/assets/images/TEMA-01-BUNGA-03-e1721804270463-1-2.webp',          top: 3900, size: 90,  opacity: 0.5,  rotate: -22,  left: true  },
+            { src: '/assets/images/TEMA-01-BUNGA-01-co-2-e1721803892640-1-2.webp',     top: 4400, size: 80,  opacity: 0.45, rotate: 8,    left: false },
+            { src: '/assets/images/bunga-akhir-tema-01-new-1-1-1-1-1-2.webp',          top: 4900, size: 100, opacity: 0.5,  rotate: -15,  left: true  },
+            { src: '/assets/images/TEMA-01-BUNGA-02-e1721804129842-1-2.webp',          top: 5400, size: 85,  opacity: 0.45, rotate: 15,   left: false },
+          ].map((f, i) => (
+            <div
+              key={i}
+              className="absolute pointer-events-none overflow-hidden"
+              style={{
+                top: f.top,
+                [f.left ? 'left' : 'right']: -20,
+                width: f.size,
+                height: f.size,
+                opacity: f.opacity,
+                transform: `rotate(${f.rotate}deg)`,
+                zIndex: 2,
+              }}
+            >
+              <Image
+                src={f.src}
+                alt=""
+                fill
+                sizes={`${f.size}px`}
+                className="object-contain"
+              />
+            </div>
+          ))}
 
           {/* Navigation Bar */}
           <header className="sticky top-0 z-40 bg-white/80 border-b border-[#D4AF37]/30 px-4 py-3 flex items-center justify-between backdrop-blur-md shadow-xs">
@@ -238,7 +277,7 @@ function ModernRomanticContent() {
   );
 }
 
-export default function ModernRomanticPage() {
+export default function MinimalistPage() {
   return (
     <Suspense
       fallback={
@@ -249,7 +288,7 @@ export default function ModernRomanticPage() {
         </div>
       }
     >
-      <ModernRomanticContent />
+      <MinimalistContent />
     </Suspense>
   );
 }

@@ -3,7 +3,7 @@ import { Cormorant_Garamond, Great_Vibes, Plus_Jakarta_Sans } from 'next/font/go
 import './globals.css';
 
 const cormorant = Cormorant_Garamond({
-  weight: ['400', '500', '600', '700'],
+  weight: ['300', '400', '500', '600', '700'],
   subsets: ['latin'],
   variable: '--font-cormorant',
 });
