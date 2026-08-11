@@ -10,13 +10,13 @@ interface LoveStoryItem {
   description: string;
 }
 
-interface MinimalistLoveStoryQuoteProps {
+interface TerracottaLoveStoryQuoteProps {
   timeline: LoveStoryItem[];
 }
 
-export default function MinimalistLoveStoryQuote({ timeline }: MinimalistLoveStoryQuoteProps) {
+export default function TerracottaLoveStoryQuote({ timeline }: TerracottaLoveStoryQuoteProps) {
   return (
-    <section className="py-16 mx-4 my-8 rounded-3xl relative overflow-hidden bg-[#FDFBF7]/90 backdrop-blur-md shadow-xl border border-[#c1a784]/30">
+    <section className="py-16 mx-4 my-8 rounded-3xl relative overflow-hidden bg-[#F4EFEA]/90 backdrop-blur-md shadow-xl border border-[#C86B53]/30">
 
       <div className="max-w-3xl mx-auto px-6 relative z-10 space-y-32">
         {/* Quote Section */}
@@ -27,32 +27,35 @@ export default function MinimalistLoveStoryQuote({ timeline }: MinimalistLoveSto
           transition={{ duration: 0.8, ease: [0.25, 0.46, 0.45, 0.94] }}
           className="text-center max-w-xl mx-auto"
         >
-          <div className="w-12 h-12 mx-auto relative mb-8">
-            <Image src="/assets/images/TEMA-01-BUNGA-03-e1721804270463-1-2.webp" alt="Ornament" fill className="object-contain opacity-70" />
+          <div className="w-12 h-12 mx-auto relative mb-8 flex items-center justify-center text-[#C86B53]">
+            {/* SVG Boho Leaf Icon */}
+            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round">
+              <path d="M12 2v20M17 5c-3.11 0-6.22 1.5-8.3 4C6.38 11.83 5 15.11 5 18.5c2.4 0 4.88-.85 6.9-2.5 2.5-2.07 4.1-5.18 4.1-8.3V5z" />
+            </svg>
           </div>
           
           <h3 
-            className="text-4xl md:text-5xl text-[#4A4036] mb-6"
+            className="text-4xl md:text-5xl text-[#5C3D2E] mb-6"
             style={{ fontFamily: 'var(--font-great-vibes)' }}
           >
             Ar-Rum: 21
           </h3>
           
-          <p className="text-sm md:text-base text-[#8c7b68] leading-relaxed font-serif italic relative px-6">
-            <span className="text-4xl text-[#a68e68] absolute -top-4 left-0 opacity-40" style={{ fontFamily: 'var(--font-great-vibes)' }}>"</span>
+          <p className="text-sm md:text-base text-[#C86B53] leading-relaxed font-sans italic relative px-6">
+            <span className="text-4xl text-[#C86B53] absolute -top-4 left-0 opacity-40" style={{ fontFamily: 'var(--font-great-vibes)' }}>"</span>
             Dan di antara tanda-tanda (kebesaran)-Nya ialah Dia menciptakan pasangan-pasangan untukmu dari jenismu sendiri, agar kamu cenderung dan merasa tenteram kepadanya, dan Dia menjadikan di antaramu rasa kasih dan sayang.
-            <span className="text-4xl text-[#a68e68] absolute -bottom-6 right-0 opacity-40" style={{ fontFamily: 'var(--font-great-vibes)' }}>"</span>
+            <span className="text-4xl text-[#C86B53] absolute -bottom-6 right-0 opacity-40" style={{ fontFamily: 'var(--font-great-vibes)' }}>"</span>
           </p>
         </motion.div>
 
         {/* Love Story Timeline */}
         <div className="relative">
           <div className="text-center space-y-4 mb-16 relative">
-            <span className="text-[10px] uppercase tracking-[0.4em] text-[#8c7b68] font-medium block">
+            <span className="text-[10px] uppercase tracking-[0.4em] text-[#C86B53] font-medium block">
               Perjalanan Cinta
             </span>
             <h2 
-              className="text-5xl md:text-6xl text-[#4A4036] mb-2"
+              className="text-5xl md:text-6xl text-[#5C3D2E] mb-2"
               style={{ fontFamily: 'var(--font-great-vibes)' }}
             >
               Love Story
@@ -61,7 +64,7 @@ export default function MinimalistLoveStoryQuote({ timeline }: MinimalistLoveSto
 
           <div className="relative">
             {/* Center Vertical Line */}
-            <div className="absolute left-[27px] md:left-1/2 top-0 bottom-0 w-px bg-gradient-to-b from-transparent via-[#a68e68] to-transparent" />
+            <div className="absolute left-[27px] md:left-1/2 top-0 bottom-0 w-px bg-gradient-to-b from-transparent via-[#C86B53] to-transparent" />
 
             <div className="space-y-12">
               {timeline.map((item, idx) => {
@@ -78,25 +81,21 @@ export default function MinimalistLoveStoryQuote({ timeline }: MinimalistLoveSto
                     }`}
                   >
                     {/* Timeline Node - Diamond */}
-                    <div className="absolute left-[27px] md:left-1/2 -translate-x-1/2 w-4 h-4 bg-[#e8e2d8] border-2 border-[#a68e68] rotate-45 z-10 shadow-[0_0_10px_rgba(166,142,104,0.3)]" />
+                    <div className="absolute left-[27px] md:left-1/2 -translate-x-1/2 w-4 h-4 bg-[#F4EFEA] border-2 border-[#C86B53] rotate-45 z-10 shadow-[0_0_10px_rgba(166,142,104,0.3)]" />
 
                     {/* Content Box */}
                     <div className={`w-full md:w-1/2 pl-16 md:pl-0 ${isEven ? 'md:pr-12 text-left md:text-right' : 'md:pl-12 text-left'}`}>
-                      <div className="bg-[#f4efe8] p-6 rounded-xl border-2 border-[#a68e68] shadow-lg relative group hover:-translate-y-1 transition-transform duration-500">
-                        {/* Decorative corner inside card */}
-                        <div className={`absolute top-0 w-8 h-8 opacity-30 ${isEven ? 'right-0' : 'left-0'}`}>
-                           <Image src="/assets/images/TEMA-01-BUNGA-04-e1721804205400-1-2.webp" alt="Deco" fill className="object-contain" />
-                        </div>
-                        <span className="inline-block px-4 py-1.5 bg-[#a68e68]/10 text-[#857053] text-[9px] font-bold uppercase tracking-widest rounded-full mb-4 border border-[#a68e68]/20">
+                      <div className="bg-[#F4EFEA] p-6 rounded-[40px] rounded-tl-sm border-2 border-[#C86B53]/20 shadow-lg relative group hover:-translate-y-1 transition-transform duration-500">
+                        <span className="inline-block px-4 py-1.5 bg-[#C86B53]/10 text-[#829379] text-[9px] font-bold uppercase tracking-widest rounded-full mb-4 border border-[#C86B53]/20">
                           {item.year}
                         </span>
                         <h4 
-                          className="text-3xl text-[#4A4036] mb-3"
+                          className="text-3xl text-[#5C3D2E] mb-3"
                           style={{ fontFamily: 'var(--font-great-vibes)' }}
                         >
                           {item.title}
                         </h4>
-                        <p className="text-xs text-[#8c7b68] leading-relaxed font-sans">
+                        <p className="text-xs text-[#C86B53] leading-relaxed font-serif">
                           {item.description}
                         </p>
                       </div>
@@ -107,8 +106,8 @@ export default function MinimalistLoveStoryQuote({ timeline }: MinimalistLoveSto
             </div>
             
             {/* End Heart - Diamond */}
-            <div className="absolute left-[27px] md:left-1/2 bottom-0 translate-y-1/2 -translate-x-1/2 w-8 h-8 bg-[#e8e2d8] border border-[#a68e68] rotate-45 flex items-center justify-center z-10">
-              <Heart className="w-4 h-4 text-[#857053] -rotate-45" />
+            <div className="absolute left-[27px] md:left-1/2 bottom-0 translate-y-1/2 -translate-x-1/2 w-8 h-8 bg-[#F4EFEA] border border-[#C86B53] rotate-45 flex items-center justify-center z-10">
+              <Heart className="w-4 h-4 text-[#829379] -rotate-45" />
             </div>
           </div>
         </div>

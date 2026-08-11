@@ -7,17 +7,16 @@ import Link from 'next/link';
 import { AnimatePresence } from 'framer-motion';
 import { ArrowLeft, Sparkles } from 'lucide-react';
 
-import MinimalistProfileIntro from '@/components/invitation/minimalist/MinimalistProfileIntro';
-import MinimalistIntroAnimation from '@/components/invitation/minimalist/MinimalistIntroAnimation';
-import MinimalistGate from '@/components/invitation/minimalist/MinimalistGate';
-import MinimalistHero from '@/components/invitation/minimalist/MinimalistHero';
-import MinimalistGroomBride from '@/components/invitation/minimalist/MinimalistGroomBride';
-import MinimalistEventSchedule from '@/components/invitation/minimalist/MinimalistEventSchedule';
-import MinimalistCountdown from '@/components/invitation/minimalist/MinimalistCountdown';
-import MinimalistLoveStoryQuote from '@/components/invitation/minimalist/MinimalistLoveStoryQuote';
-import MinimalistPhotoGallery from '@/components/invitation/minimalist/MinimalistPhotoGallery';
-import MinimalistRsvpForm from '@/components/invitation/minimalist/MinimalistRsvpForm';
-import MinimalistDigitalGift from '@/components/invitation/minimalist/MinimalistDigitalGift';
+import TerracottaProfileIntro from '@/components/invitation/terracotta/TerracottaProfileIntro';
+import TerracottaIntroAnimation from '@/components/invitation/terracotta/TerracottaIntroAnimation';
+import TerracottaHero from '@/components/invitation/terracotta/TerracottaHero';
+import TerracottaGroomBride from '@/components/invitation/terracotta/TerracottaGroomBride';
+import TerracottaEventSchedule from '@/components/invitation/terracotta/TerracottaEventSchedule';
+import TerracottaCountdown from '@/components/invitation/terracotta/TerracottaCountdown';
+import TerracottaLoveStoryQuote from '@/components/invitation/terracotta/TerracottaLoveStoryQuote';
+import TerracottaPhotoGallery from '@/components/invitation/terracotta/TerracottaPhotoGallery';
+import TerracottaRsvpForm from '@/components/invitation/terracotta/TerracottaRsvpForm';
+import TerracottaDigitalGift from '@/components/invitation/terracotta/TerracottaDigitalGift';
 
 import HeaderBismillah from '@/components/invitation/HeaderBismillah';
 import ClosingSection from '@/components/invitation/ClosingSection';
@@ -25,7 +24,7 @@ import MusicPlayer from '@/components/invitation/MusicPlayer';
 
 import { FAHREIZA_AMANDA_DATA } from '@/data/demoData';
 
-function MinimalistContent() {
+function TerracottaContent() {
   const searchParams = useSearchParams();
   const guestNameParam = searchParams.get('to') || 'Tamu Undangan';
 
@@ -87,39 +86,30 @@ function MinimalistContent() {
   };
 
   return (
-    <div className="flex w-full min-h-screen bg-[#FDFBF7] text-[#4A4036] selection:bg-[#c1a784] selection:text-white font-serif overflow-hidden">
+    <div className="flex w-full min-h-screen bg-[#F4EFEA] text-[#5C3D2E] selection:bg-[#C86B53] selection:text-white font-sans overflow-hidden">
       
       {/* ── LEFT PANEL (DESKTOP ONLY) ── */}
-      <div className="hidden lg:block lg:w-[60%] lg:h-screen lg:sticky lg:top-0 relative overflow-hidden bg-[#e8e2d8]">
-        {/* Background Texture on Left Panel */}
-        <div className="absolute inset-0 opacity-[0.15] z-0 pointer-events-none mix-blend-multiply">
+      <div className="hidden lg:flex lg:w-[60%] lg:h-screen lg:sticky lg:top-0 relative items-center justify-center bg-[#F4EFEA] border-r border-[#C86B53]/20">
+        
+        {/* Main Background Image */}
+        <div className="absolute inset-0 w-full h-full">
           <Image
-            src="/assets/images/BAHAN-TEMA-1-1-2.webp"
-            alt="Texture"
+            src="/assets/images/boho_terracotta_bg.png"
+            alt="Boho Terracotta Background"
             fill
             className="object-cover"
+            priority
           />
         </div>
         
-        {/* Couple Photo */}
-        <div className="absolute inset-0 flex items-center justify-center p-12">
-          <div className="relative w-full h-full max-h-[85vh] max-w-[85%] rounded-t-[15rem] overflow-hidden shadow-2xl border-[8px] border-[#FDFBF7]">
-            <Image
-              src="/assets/images/hero-wedding.webp"
-              alt="Couple"
-              fill
-              className="object-cover"
-              priority
-            />
+        {/* Elegant Text Overlay on Left Panel */}
+        <div className="relative z-10 text-center space-y-6 bg-[#F4EFEA]/80 backdrop-blur-md p-16 rounded-full border border-[#C86B53]/20 shadow-2xl">
+          <h2 className="text-4xl font-serif text-[#C86B53] mb-4">The Wedding of</h2>
+          <div className="text-6xl text-[#5C3D2E]" style={{ fontFamily: 'var(--font-great-vibes)' }}>
+            Fahreiza <span className="text-[#829379]">&</span> Amanda
           </div>
         </div>
-        
-        {/* Decorative Overlay on Left */}
-        <div className="absolute top-0 left-0 w-64 h-64 opacity-60">
-          <Image src="/assets/images/TEMA-01-BUNGA-01-co-1-2.png" alt="Flower" fill className="object-contain" />
-        </div>
-      <MinimalistGate />
-</div>
+      </div>
 
       {/* ── RIGHT PANEL (SCROLLABLE CONTENT) ── */}
       <div className="w-full lg:w-[40%] h-screen overflow-y-auto relative scroll-smooth shadow-[-10px_0_30px_rgba(0,0,0,0.03)] z-10 [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]">
@@ -127,8 +117,8 @@ function MinimalistContent() {
         {/* Fixed Floral Background for Right Panel */}
         <div className="fixed top-0 right-0 w-full lg:w-[40%] h-screen pointer-events-none z-[-1]">
           <Image
-            src="/assets/images/vintage_wedding_hero_bg.png"
-            alt="Vintage Floral Background"
+            src="/assets/images/boho_terracotta_bg.png"
+            alt="Boho Terracotta Background"
             fill
             sizes="(max-width: 1024px) 100vw, 40vw"
             className="object-cover"
@@ -139,7 +129,7 @@ function MinimalistContent() {
         {/* 1. Cover Envelope Screen (Acts as overlay on right panel) */}
         {!isOpen && !showSplash && (
           <div className="absolute inset-0 z-50">
-            <MinimalistProfileIntro
+            <TerracottaProfileIntro
               guestName={guestNameParam}
               groomName={FAHREIZA_AMANDA_DATA.groom.name}
               brideName={FAHREIZA_AMANDA_DATA.bride.name}
@@ -154,42 +144,42 @@ function MinimalistContent() {
         <AnimatePresence>
           {showSplash && (
             <div className="absolute inset-0 z-50">
-              <MinimalistIntroAnimation />
+              <TerracottaIntroAnimation />
             </div>
           )}
         </AnimatePresence>
 
-        {/* 3. Main Minimalist Invitation Content */}
+        {/* 3. Main Terracotta Invitation Content */}
         {isOpen && (
           <div className="min-h-screen relative z-10 pb-16">
             <MusicPlayer isPlaying={isPlayingAudio} onTogglePlay={handleToggleAudio} />
 
             {/* Navigation Bar */}
-            <header className="sticky top-0 z-40 bg-[#FDFBF7]/90 border-b border-[#c1a784]/30 px-4 py-3 flex items-center justify-between backdrop-blur-md shadow-xs">
-              <Link href="/" className="flex items-center gap-2 text-[10px] uppercase tracking-widest font-bold text-[#8c7b68] hover:text-[#4A4036] transition-colors">
+            <header className="sticky top-0 z-40 bg-[#F4EFEA]/90 border-b border-[#C86B53]/20 px-4 py-3 flex items-center justify-between backdrop-blur-md shadow-xs">
+              <Link href="/" className="flex items-center gap-2 text-[10px] uppercase tracking-widest font-bold text-[#5C3D2E] hover:text-[#C86B53] transition-colors">
                 <ArrowLeft className="w-4 h-4" />
                 <span>Katalog</span>
               </Link>
-              <span className="font-serif text-[11px] text-[#c1a784] font-bold tracking-widest flex items-center gap-1.5 uppercase">
-                <Sparkles className="w-3.5 h-3.5 text-[#c1a784]" />
-                Botanical Arch
+              <span className="font-serif text-[11px] text-[#C86B53] font-bold tracking-widest flex items-center gap-1.5 uppercase">
+                <Sparkles className="w-3.5 h-3.5 text-[#C86B53]" />
+                Terracotta Boho
               </span>
             </header>
 
             {/* Main Hero Section */}
-            <MinimalistHero
+            <TerracottaHero
               groomName={FAHREIZA_AMANDA_DATA.groom.name}
               brideName={FAHREIZA_AMANDA_DATA.bride.name}
               weddingDate={FAHREIZA_AMANDA_DATA.akad.date}
             />
 
             {/* Continuous Content Container */}
-            <div className="relative w-full z-20 flex flex-col pb-12">
-              <div className="mx-4 my-8 rounded-3xl bg-[#FDFBF7]/90 backdrop-blur-md shadow-xl border border-[#c1a784]/30">
+            <div className="relative w-full z-20 flex flex-col pb-12 gap-4">
+              <div className="mx-4 my-8 rounded-3xl bg-[#F4EFEA]/95 backdrop-blur-md shadow-xl border border-[#C86B53]/20">
                 <HeaderBismillah />
               </div>
 
-            <MinimalistGroomBride
+            <TerracottaGroomBride
               groom={{
                 name: FAHREIZA_AMANDA_DATA.groom.name,
                 fullName: FAHREIZA_AMANDA_DATA.groom.fullName,
@@ -206,7 +196,7 @@ function MinimalistContent() {
               }}
             />
 
-            <MinimalistEventSchedule
+            <TerracottaEventSchedule
               akad={{
                 title: FAHREIZA_AMANDA_DATA.akad.title,
                 date: FAHREIZA_AMANDA_DATA.akad.date,
@@ -225,18 +215,18 @@ function MinimalistContent() {
               }}
             />
 
-            <MinimalistCountdown targetDate={FAHREIZA_AMANDA_DATA.eventDateISO} />
+            <TerracottaCountdown targetDate={FAHREIZA_AMANDA_DATA.eventDateISO} />
 
-            <MinimalistLoveStoryQuote timeline={FAHREIZA_AMANDA_DATA.loveStories} />
+            <TerracottaLoveStoryQuote timeline={FAHREIZA_AMANDA_DATA.loveStories} />
 
-            <MinimalistPhotoGallery
+            <TerracottaPhotoGallery
               photos={FAHREIZA_AMANDA_DATA.galleryPhotos}
               coupleNames={`${FAHREIZA_AMANDA_DATA.groom.name} & ${FAHREIZA_AMANDA_DATA.bride.name}`}
             />
 
-            <MinimalistRsvpForm initialGuestName={guestNameParam} />
+            <TerracottaRsvpForm initialGuestName={guestNameParam} />
 
-            <MinimalistDigitalGift
+            <TerracottaDigitalGift
               bankAccounts={FAHREIZA_AMANDA_DATA.bankAccounts}
               qrisUrl={FAHREIZA_AMANDA_DATA.qrisUrl}
               giftAddress={{
@@ -250,8 +240,8 @@ function MinimalistContent() {
             <ClosingSection
               groomName={FAHREIZA_AMANDA_DATA.groom.name}
               brideName={FAHREIZA_AMANDA_DATA.bride.name}
-              accentColor="#c1a784"
-              themeName="Botanical Arch Edition"
+              accentColor="#C86B53"
+              themeName="Terracotta Boho Edition"
               isLightTheme={true}
             />
           </div>
@@ -261,18 +251,18 @@ function MinimalistContent() {
   );
 }
 
-export default function MinimalistPage() {
+export default function TerracottaDemoPage() {
   return (
     <Suspense
       fallback={
-        <div className="min-h-screen bg-[#FDFBF7] flex items-center justify-center text-[#4A4036]">
+        <div className="min-h-screen bg-[#F4EFEA] flex items-center justify-center text-[#5C3D2E]">
           <p className="text-sm font-semibold tracking-widest uppercase animate-pulse">
-            Memuat Botanical Arch Edition...
+            Memuat Terracotta Boho Edition...
           </p>
         </div>
       }
     >
-      <MinimalistContent />
+      <TerracottaContent />
     </Suspense>
   );
 }

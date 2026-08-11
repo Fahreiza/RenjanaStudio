@@ -12,14 +12,14 @@ interface PersonInfo {
   instagram?: string;
 }
 
-interface MinimalistGroomBrideProps {
+interface TerracottaGroomBrideProps {
   groom: PersonInfo;
   bride: PersonInfo;
 }
 
-export default function MinimalistGroomBride({ groom, bride }: MinimalistGroomBrideProps) {
+export default function TerracottaGroomBride({ groom, bride }: TerracottaGroomBrideProps) {
   return (
-    <section className="py-16 mx-4 my-8 rounded-3xl relative overflow-hidden bg-[#FDFBF7]/90 backdrop-blur-md shadow-xl border border-[#c1a784]/30">
+    <section className="py-16 mx-4 my-8 rounded-3xl relative overflow-hidden bg-[#F4EFEA]/90 backdrop-blur-md shadow-xl border border-[#C86B53]/30">
       <div className="max-w-4xl mx-auto px-6 relative z-10">
         {/* Title Section */}
         <div className="text-center space-y-4 mb-20 relative">
@@ -27,15 +27,19 @@ export default function MinimalistGroomBride({ groom, bride }: MinimalistGroomBr
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="w-16 h-16 mx-auto opacity-70 mb-4 relative"
+            className="w-12 h-12 mx-auto mb-4 relative flex items-center justify-center text-[#C86B53]"
           >
-            <Image src="/assets/images/TEMA-01-BUNGA-01-co-1-2.png" alt="Flower" fill className="object-contain" />
+            {/* SVG Boho Arch Icon */}
+            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round">
+              <path d="M4 22V10a8 8 0 1 1 16 0v12" />
+              <path d="M12 22V14" />
+            </svg>
           </motion.div>
-          <span className="text-[10px] uppercase tracking-[0.4em] text-[#8c7b68] font-medium block">
+          <span className="text-[10px] uppercase tracking-[0.4em] text-[#C86B53] font-medium block">
             Mempelai Pengantin
           </span>
           <h2 
-            className="text-5xl md:text-6xl text-[#4A4036] mb-2"
+            className="text-5xl md:text-6xl text-[#5C3D2E] mb-2"
             style={{ fontFamily: 'var(--font-great-vibes)' }}
           >
             Mempelai
@@ -51,12 +55,11 @@ export default function MinimalistGroomBride({ groom, bride }: MinimalistGroomBr
             transition={{ duration: 0.8, ease: [0.25, 0.46, 0.45, 0.94] }}
             className="flex flex-col items-center group relative"
           >
-            {/* Ornate Frame */}
+            {/* Organic Frame */}
             <div className="relative w-64 h-[380px] p-3 mb-8 transition-transform duration-700 group-hover:-translate-y-2">
-              <div className="absolute inset-0 border-2 border-[#a68e68] rounded-t-full rounded-b-xl opacity-80" />
-              <div className="absolute inset-2 border border-[#a68e68] rounded-t-full rounded-b-lg opacity-40" />
+              <div className="absolute inset-0 bg-[#C86B53]/15 rounded-tl-[120px] rounded-br-[120px] rounded-tr-3xl rounded-bl-3xl" />
               
-              <div className="relative w-full h-full rounded-t-full rounded-b-lg overflow-hidden shadow-inner">
+              <div className="relative w-full h-full rounded-tl-[120px] rounded-br-[120px] rounded-tr-3xl rounded-bl-3xl overflow-hidden shadow-lg border-2 border-white/40">
                 <Image
                   src={groom.image}
                   alt={groom.name}
@@ -66,24 +69,19 @@ export default function MinimalistGroomBride({ groom, bride }: MinimalistGroomBr
                   priority
                 />
               </div>
-
-              {/* Small floral deco at bottom center of frame */}
-              <div className="absolute -bottom-6 left-1/2 -translate-x-1/2 w-12 h-12 z-20">
-                <Image src="/assets/images/TEMA-01-BUNGA-04-e1721804205400-1-2.webp" alt="Deco" fill className="object-contain drop-shadow-md" />
-              </div>
             </div>
 
             <div className="text-center space-y-3 mt-4">
-              <span className="text-[10px] uppercase tracking-[0.3em] text-[#c1a784] font-medium">
+              <span className="text-[10px] uppercase tracking-[0.3em] text-[#C86B53] font-medium">
                 The Groom
               </span>
-              <h3 className="font-serif text-3xl md:text-4xl text-[#857053] uppercase tracking-widest drop-shadow-sm mb-2">
+              <h3 className="font-sans text-3xl md:text-4xl text-[#829379] uppercase tracking-widest drop-shadow-sm mb-2">
                 {groom.name}
               </h3>
-              <h4 className="font-serif text-lg text-[#4A4036] italic">
+              <h4 className="font-sans text-lg text-[#5C3D2E] italic">
                 {groom.fullName}
               </h4>
-              <p className="text-xs text-[#8c7b68] font-sans">
+              <p className="text-xs text-[#C86B53] font-serif">
                 Putra dari {groom.parents}
               </p>
               
@@ -92,7 +90,7 @@ export default function MinimalistGroomBride({ groom, bride }: MinimalistGroomBr
                   href={`https://instagram.com/${groom.instagram.replace('@', '')}`}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center gap-2 mt-4 px-4 py-2 border border-[#c1a784]/30 rounded-full text-[10px] text-[#8c7b68] hover:bg-[#c1a784]/10 transition-colors uppercase tracking-[0.2em]"
+                  className="inline-flex items-center justify-center gap-2 mt-4 px-4 py-2 border border-[#C86B53]/30 rounded-full text-[10px] text-[#C86B53] hover:bg-[#C86B53]/10 transition-colors uppercase tracking-[0.2em]"
                 >
                   <Camera className="w-3 h-3" />
                   <span>{groom.instagram}</span>
@@ -109,12 +107,11 @@ export default function MinimalistGroomBride({ groom, bride }: MinimalistGroomBr
             transition={{ duration: 0.8, delay: 0.2, ease: [0.25, 0.46, 0.45, 0.94] }}
             className="flex flex-col items-center group relative"
           >
-            {/* Ornate Frame */}
+            {/* Organic Frame */}
             <div className="relative w-64 h-[380px] p-3 mb-8 transition-transform duration-700 group-hover:-translate-y-2">
-              <div className="absolute inset-0 border-2 border-[#a68e68] rounded-t-full rounded-b-xl opacity-80" />
-              <div className="absolute inset-2 border border-[#a68e68] rounded-t-full rounded-b-lg opacity-40" />
+              <div className="absolute inset-0 bg-[#C86B53]/10 rounded-tr-[120px] rounded-bl-[120px] rounded-tl-3xl rounded-br-3xl" />
               
-              <div className="relative w-full h-full rounded-t-full rounded-b-lg overflow-hidden shadow-inner">
+              <div className="relative w-full h-full rounded-tr-[120px] rounded-bl-[120px] rounded-tl-3xl rounded-br-3xl overflow-hidden shadow-md">
                 <Image
                   src={bride.image}
                   alt={bride.name}
@@ -124,24 +121,19 @@ export default function MinimalistGroomBride({ groom, bride }: MinimalistGroomBr
                   priority
                 />
               </div>
-
-              {/* Small floral deco at bottom center of frame */}
-              <div className="absolute -bottom-6 left-1/2 -translate-x-1/2 w-12 h-12 z-20">
-                <Image src="/assets/images/TEMA-01-BUNGA-05-e1721804339713-1-2.webp" alt="Deco" fill className="object-contain drop-shadow-md" />
-              </div>
             </div>
 
             <div className="text-center space-y-3 mt-4">
-              <span className="text-[10px] uppercase tracking-[0.3em] text-[#c1a784] font-medium">
+              <span className="text-[10px] uppercase tracking-[0.3em] text-[#C86B53] font-medium">
                 The Bride
               </span>
-              <h3 className="font-serif text-3xl md:text-4xl text-[#857053] uppercase tracking-widest drop-shadow-sm mb-2">
+              <h3 className="font-sans text-3xl md:text-4xl text-[#829379] uppercase tracking-widest drop-shadow-sm mb-2">
                 {bride.name}
               </h3>
-              <h4 className="font-serif text-lg text-[#4A4036] italic">
+              <h4 className="font-sans text-lg text-[#5C3D2E] italic">
                 {bride.fullName}
               </h4>
-              <p className="text-xs text-[#8c7b68] font-sans">
+              <p className="text-xs text-[#C86B53] font-serif">
                 Putri dari {bride.parents}
               </p>
 
@@ -150,7 +142,7 @@ export default function MinimalistGroomBride({ groom, bride }: MinimalistGroomBr
                   href={`https://instagram.com/${bride.instagram.replace('@', '')}`}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center gap-2 mt-4 px-4 py-2 border border-[#c1a784]/30 rounded-full text-[10px] text-[#8c7b68] hover:bg-[#c1a784]/10 transition-colors uppercase tracking-[0.2em]"
+                  className="inline-flex items-center justify-center gap-2 mt-4 px-4 py-2 border border-[#C86B53]/30 rounded-full text-[10px] text-[#C86B53] hover:bg-[#C86B53]/10 transition-colors uppercase tracking-[0.2em]"
                 >
                   <Camera className="w-3 h-3" />
                   <span>{bride.instagram}</span>

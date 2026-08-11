@@ -5,7 +5,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import Image from 'next/image';
 import { ArrowRight } from 'lucide-react';
 
-interface MinimalistProfileIntroProps {
+interface TerracottaProfileIntroProps {
   guestName: string;
   groomName: string;
   brideName: string;
@@ -14,11 +14,11 @@ interface MinimalistProfileIntroProps {
   onOpenInvitation: () => void;
 }
 
-export default function MinimalistProfileIntro({
+export default function TerracottaProfileIntro({
   groomName,
   brideName,
   onOpenInvitation,
-}: MinimalistProfileIntroProps) {
+}: TerracottaProfileIntroProps) {
   const [isOpening, setIsOpening] = useState(false);
 
   const handleOpen = () => {
@@ -79,7 +79,7 @@ export default function MinimalistProfileIntro({
           >
             {/* The Wedding of */}
             <motion.h2 
-              className="text-2xl sm:text-3xl text-white/90 font-serif mb-2"
+              className="text-2xl sm:text-3xl text-white/90 font-sans mb-2"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.3, duration: 1 }}
@@ -99,7 +99,7 @@ export default function MinimalistProfileIntro({
 
             {/* Subtext */}
             <div className="mb-8 max-w-sm mx-auto">
-              <p className="text-sm text-white/80 font-serif leading-relaxed px-4">
+              <p className="text-sm text-white/80 font-sans leading-relaxed px-4">
                 Dengan penuh kegembiraan, kami mengundang Bpk/Ibu/Sdr/i untuk hadir di hari istimewa kami
               </p>
             </div>
@@ -107,10 +107,10 @@ export default function MinimalistProfileIntro({
             {/* Open Button */}
             <button
               onClick={handleOpen}
-              className="mt-4 px-8 py-3.5 bg-white text-[#4A4036] rounded-full hover:bg-gray-50 transition-colors active:scale-95 flex items-center gap-2 shadow-lg group"
+              className="mt-4 px-8 py-3.5 bg-white text-[#5C3D2E] rounded-full hover:bg-gray-50 transition-colors active:scale-95 flex items-center gap-2 shadow-lg group"
             >
-              <ArrowRight className="w-4 h-4 text-[#4A4036] group-hover:translate-x-1 transition-transform" />
-              <span className="text-sm font-serif font-semibold tracking-wide">
+              <ArrowRight className="w-4 h-4 text-[#5C3D2E] group-hover:translate-x-1 transition-transform" />
+              <span className="text-sm font-sans font-semibold tracking-wide">
                 Buka Undangan
               </span>
             </button>

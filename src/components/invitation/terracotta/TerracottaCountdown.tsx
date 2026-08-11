@@ -5,11 +5,11 @@ import { motion } from 'framer-motion';
 import { Calendar } from 'lucide-react';
 import Image from 'next/image';
 
-interface MinimalistCountdownProps {
+interface TerracottaCountdownProps {
   targetDate: string; // ISO date string
 }
 
-export default function MinimalistCountdown({ targetDate }: MinimalistCountdownProps) {
+export default function TerracottaCountdown({ targetDate }: TerracottaCountdownProps) {
   const [timeLeft, setTimeLeft] = useState({
     days: 0,
     hours: 0,
@@ -41,7 +41,7 @@ export default function MinimalistCountdown({ targetDate }: MinimalistCountdownP
   };
 
   return (
-    <section className="py-16 mx-4 my-8 rounded-3xl relative overflow-hidden bg-[#FDFBF7]/90 backdrop-blur-md shadow-xl border border-[#c1a784]/30">
+    <section className="py-16 mx-4 my-8 rounded-3xl relative overflow-hidden bg-[#F4EFEA]/90 backdrop-blur-md shadow-xl border border-[#C86B53]/30">
       <div className="max-w-2xl mx-auto px-6 relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -59,13 +59,13 @@ export default function MinimalistCountdown({ targetDate }: MinimalistCountdownP
               { label: 'Detik', value: timeLeft.seconds },
             ].map((unit, idx) => (
               <div key={idx} className="flex flex-col items-center">
-                <div className="relative w-16 h-16 sm:w-20 sm:h-20 bg-[#e8e2d8] rounded-xl shadow-lg border-2 border-[#a68e68] flex items-center justify-center mb-3 overflow-hidden">
-                  <div className="absolute inset-1 border border-[#a68e68]/40 rounded-lg" />
-                  <span className="font-serif text-3xl sm:text-4xl text-[#857053] font-medium drop-shadow-sm z-10">
+                <div className="relative w-16 h-16 sm:w-20 sm:h-20 bg-[#F4EFEA] rounded-xl shadow-lg border-2 border-[#C86B53] flex items-center justify-center mb-3 overflow-hidden">
+                  <div className="absolute inset-1 border border-[#C86B53]/40 rounded-lg" />
+                  <span className="font-sans text-3xl sm:text-4xl text-[#829379] font-medium drop-shadow-sm z-10">
                     {String(unit.value).padStart(2, '0')}
                   </span>
                 </div>
-                <span className="text-[9px] uppercase tracking-[0.2em] font-sans font-semibold text-[#8c7b68]">
+                <span className="text-[9px] uppercase tracking-[0.2em] font-serif font-semibold text-[#C86B53]">
                   {unit.label}
                 </span>
               </div>
@@ -73,30 +73,30 @@ export default function MinimalistCountdown({ targetDate }: MinimalistCountdownP
           </div>
 
           <div className="space-y-4">
-            <p className="text-[10px] sm:text-xs text-[#8c7b68] leading-relaxed max-w-sm mx-auto font-sans font-medium text-center">
+            <p className="text-[10px] sm:text-xs text-[#C86B53] leading-relaxed max-w-sm mx-auto font-serif font-medium text-center">
               Dengan memohon rahmat dan ridho Allah SWT, kami mengundang Bapak/Ibu/Saudara/i, untuk menghadiri acara pernikahan kami:
             </p>
 
             <div className="flex flex-wrap justify-center gap-3 pt-4">
               <button
                 onClick={() => handleExportCalendar('google')}
-                className="flex items-center gap-2 px-4 py-2.5 bg-[#e8e2d8] border border-[#a68e68]/50 rounded-full text-[9px] uppercase tracking-widest text-[#4A4036] hover:bg-[#f4efe8] transition-colors shadow-sm"
+                className="flex items-center gap-2 px-4 py-2.5 bg-[#F4EFEA] border border-[#C86B53]/50 rounded-full text-[9px] uppercase tracking-widest text-[#5C3D2E] hover:bg-[#F4EFEA] transition-colors shadow-sm"
               >
-                <Calendar className="w-3 h-3 text-[#857053]" />
+                <Calendar className="w-3 h-3 text-[#829379]" />
                 <span>Google</span>
               </button>
               <button
                 onClick={() => handleExportCalendar('apple')}
-                className="flex items-center gap-2 px-4 py-2.5 bg-[#e8e2d8] border border-[#a68e68]/50 rounded-full text-[9px] uppercase tracking-widest text-[#4A4036] hover:bg-[#f4efe8] transition-colors shadow-sm"
+                className="flex items-center gap-2 px-4 py-2.5 bg-[#F4EFEA] border border-[#C86B53]/50 rounded-full text-[9px] uppercase tracking-widest text-[#5C3D2E] hover:bg-[#F4EFEA] transition-colors shadow-sm"
               >
-                <Calendar className="w-3 h-3 text-[#857053]" />
+                <Calendar className="w-3 h-3 text-[#829379]" />
                 <span>Apple</span>
               </button>
               <button
                 onClick={() => handleExportCalendar('outlook')}
-                className="flex items-center gap-2 px-4 py-2.5 bg-[#e8e2d8] border border-[#a68e68]/50 rounded-full text-[9px] uppercase tracking-widest text-[#4A4036] hover:bg-[#f4efe8] transition-colors shadow-sm"
+                className="flex items-center gap-2 px-4 py-2.5 bg-[#F4EFEA] border border-[#C86B53]/50 rounded-full text-[9px] uppercase tracking-widest text-[#5C3D2E] hover:bg-[#F4EFEA] transition-colors shadow-sm"
               >
-                <Calendar className="w-3 h-3 text-[#857053]" />
+                <Calendar className="w-3 h-3 text-[#829379]" />
                 <span>Outlook</span>
               </button>
             </div>

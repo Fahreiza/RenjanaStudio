@@ -7,25 +7,25 @@ import Link from 'next/link';
 import { AnimatePresence } from 'framer-motion';
 import { ArrowLeft, Sparkles } from 'lucide-react';
 
-import MinimalistProfileIntro from '@/components/invitation/minimalist/MinimalistProfileIntro';
-import MinimalistIntroAnimation from '@/components/invitation/minimalist/MinimalistIntroAnimation';
-import MinimalistGate from '@/components/invitation/minimalist/MinimalistGate';
-import MinimalistHero from '@/components/invitation/minimalist/MinimalistHero';
-import MinimalistGroomBride from '@/components/invitation/minimalist/MinimalistGroomBride';
-import MinimalistEventSchedule from '@/components/invitation/minimalist/MinimalistEventSchedule';
-import MinimalistCountdown from '@/components/invitation/minimalist/MinimalistCountdown';
-import MinimalistLoveStoryQuote from '@/components/invitation/minimalist/MinimalistLoveStoryQuote';
-import MinimalistPhotoGallery from '@/components/invitation/minimalist/MinimalistPhotoGallery';
-import MinimalistRsvpForm from '@/components/invitation/minimalist/MinimalistRsvpForm';
-import MinimalistDigitalGift from '@/components/invitation/minimalist/MinimalistDigitalGift';
+import ChineseProfileIntro from '@/components/invitation/chinese/ChineseProfileIntro';
+import ChineseIntroAnimation from '@/components/invitation/chinese/ChineseIntroAnimation';
+import ChineseHero from '@/components/invitation/chinese/ChineseHero';
+import ChineseGroomBride from '@/components/invitation/chinese/ChineseGroomBride';
+import ChineseAnimatedBackground from '@/components/invitation/chinese/ChineseAnimatedBackground';
+import ChineseEventSchedule from '@/components/invitation/chinese/ChineseEventSchedule';
+import ChineseGreeting from '@/components/invitation/chinese/ChineseGreeting';
+import ChineseCountdown from '@/components/invitation/chinese/ChineseCountdown';
+import ChineseLoveStoryQuote from '@/components/invitation/chinese/ChineseLoveStoryQuote';
+import ChinesePhotoGallery from '@/components/invitation/chinese/ChinesePhotoGallery';
+import ChineseRsvpForm from '@/components/invitation/chinese/ChineseRsvpForm';
+import ChineseDigitalGift from '@/components/invitation/chinese/ChineseDigitalGift';
 
-import HeaderBismillah from '@/components/invitation/HeaderBismillah';
 import ClosingSection from '@/components/invitation/ClosingSection';
 import MusicPlayer from '@/components/invitation/MusicPlayer';
 
 import { FAHREIZA_AMANDA_DATA } from '@/data/demoData';
 
-function MinimalistContent() {
+function ChineseContent() {
   const searchParams = useSearchParams();
   const guestNameParam = searchParams.get('to') || 'Tamu Undangan';
 
@@ -87,59 +87,44 @@ function MinimalistContent() {
   };
 
   return (
-    <div className="flex w-full min-h-screen bg-[#FDFBF7] text-[#4A4036] selection:bg-[#c1a784] selection:text-white font-serif overflow-hidden">
+    <div className="flex w-full min-h-screen bg-[#8A151B] text-[#D4AF37] selection:bg-[#D4AF37] selection:text-[#8A151B] font-serif overflow-hidden">
       
       {/* ── LEFT PANEL (DESKTOP ONLY) ── */}
-      <div className="hidden lg:block lg:w-[60%] lg:h-screen lg:sticky lg:top-0 relative overflow-hidden bg-[#e8e2d8]">
-        {/* Background Texture on Left Panel */}
-        <div className="absolute inset-0 opacity-[0.15] z-0 pointer-events-none mix-blend-multiply">
+      <div className="hidden lg:flex lg:w-[60%] lg:h-screen lg:sticky lg:top-0 relative items-center justify-center bg-[#8A151B] border-r border-[#D4AF37]/40 shadow-2xl">
+        
+        {/* Main Background Image */}
+        <div className="absolute inset-0 w-full h-full opacity-80 mix-blend-overlay">
           <Image
-            src="/assets/images/BAHAN-TEMA-1-1-2.webp"
-            alt="Texture"
+            src="/assets/images/chinese_dragon_bg.png"
+            alt="Chinese Oriental Background"
             fill
-            className="object-cover"
-          />
-        </div>
-        
-        {/* Couple Photo */}
-        <div className="absolute inset-0 flex items-center justify-center p-12">
-          <div className="relative w-full h-full max-h-[85vh] max-w-[85%] rounded-t-[15rem] overflow-hidden shadow-2xl border-[8px] border-[#FDFBF7]">
-            <Image
-              src="/assets/images/hero-wedding.webp"
-              alt="Couple"
-              fill
-              className="object-cover"
-              priority
-            />
-          </div>
-        </div>
-        
-        {/* Decorative Overlay on Left */}
-        <div className="absolute top-0 left-0 w-64 h-64 opacity-60">
-          <Image src="/assets/images/TEMA-01-BUNGA-01-co-1-2.png" alt="Flower" fill className="object-contain" />
-        </div>
-      <MinimalistGate />
-</div>
-
-      {/* ── RIGHT PANEL (SCROLLABLE CONTENT) ── */}
-      <div className="w-full lg:w-[40%] h-screen overflow-y-auto relative scroll-smooth shadow-[-10px_0_30px_rgba(0,0,0,0.03)] z-10 [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]">
-        
-        {/* Fixed Floral Background for Right Panel */}
-        <div className="fixed top-0 right-0 w-full lg:w-[40%] h-screen pointer-events-none z-[-1]">
-          <Image
-            src="/assets/images/vintage_wedding_hero_bg.png"
-            alt="Vintage Floral Background"
-            fill
-            sizes="(max-width: 1024px) 100vw, 40vw"
             className="object-cover"
             priority
           />
         </div>
+        
+        {/* Elegant Text Overlay on Left Panel */}
+        <div className="relative z-10 text-center space-y-6 bg-[#8A151B]/80 backdrop-blur-md p-16 rounded-sm border-2 border-[#D4AF37] shadow-[0_0_40px_rgba(212,175,55,0.3)]">
+          <div className="absolute -top-10 left-1/2 -translate-x-1/2 w-20 h-20 text-[#D4AF37] opacity-80 flex items-center justify-center">
+            {/* Double Happiness 囍 */}
+            <span className="text-6xl font-bold font-sans">囍</span>
+          </div>
+          <h2 className="text-3xl font-serif text-[#D4AF37] mb-4 uppercase tracking-[0.3em] pt-4">The Wedding of</h2>
+          <div className="text-6xl text-[#FDFBF7] font-serif tracking-widest drop-shadow-[0_2px_4px_rgba(0,0,0,0.5)]">
+            Fahreiza <span className="text-[#D4AF37] px-2 text-4xl">&</span> Amanda
+          </div>
+        </div>
+      </div>
+
+      {/* ── RIGHT PANEL (SCROLLABLE CONTENT) ── */}
+      <div className="w-full lg:w-[40%] h-screen overflow-y-auto relative scroll-smooth shadow-[-10px_0_30px_rgba(0,0,0,0.03)] z-10 [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]">
+        {/* Animated Golden Dragon & Clouds Background */}
+        <ChineseAnimatedBackground />
 
         {/* 1. Cover Envelope Screen (Acts as overlay on right panel) */}
         {!isOpen && !showSplash && (
           <div className="absolute inset-0 z-50">
-            <MinimalistProfileIntro
+            <ChineseProfileIntro
               guestName={guestNameParam}
               groomName={FAHREIZA_AMANDA_DATA.groom.name}
               brideName={FAHREIZA_AMANDA_DATA.bride.name}
@@ -154,42 +139,42 @@ function MinimalistContent() {
         <AnimatePresence>
           {showSplash && (
             <div className="absolute inset-0 z-50">
-              <MinimalistIntroAnimation />
+              <ChineseIntroAnimation />
             </div>
           )}
         </AnimatePresence>
 
-        {/* 3. Main Minimalist Invitation Content */}
+        {/* 3. Main Chinese Invitation Content */}
         {isOpen && (
           <div className="min-h-screen relative z-10 pb-16">
             <MusicPlayer isPlaying={isPlayingAudio} onTogglePlay={handleToggleAudio} />
 
             {/* Navigation Bar */}
-            <header className="sticky top-0 z-40 bg-[#FDFBF7]/90 border-b border-[#c1a784]/30 px-4 py-3 flex items-center justify-between backdrop-blur-md shadow-xs">
-              <Link href="/" className="flex items-center gap-2 text-[10px] uppercase tracking-widest font-bold text-[#8c7b68] hover:text-[#4A4036] transition-colors">
+            <header className="sticky top-0 z-40 bg-[#8A151B]/95 border-b-2 border-[#D4AF37]/50 px-4 py-3 flex items-center justify-between backdrop-blur-md shadow-[0_5px_15px_rgba(0,0,0,0.5)]">
+              <Link href="/" className="flex items-center gap-2 text-[10px] uppercase tracking-widest font-bold text-[#D4AF37] hover:text-[#FDFBF7] transition-colors">
                 <ArrowLeft className="w-4 h-4" />
                 <span>Katalog</span>
               </Link>
-              <span className="font-serif text-[11px] text-[#c1a784] font-bold tracking-widest flex items-center gap-1.5 uppercase">
-                <Sparkles className="w-3.5 h-3.5 text-[#c1a784]" />
-                Botanical Arch
+              <span className="font-serif text-[11px] text-[#FDFBF7] font-bold tracking-widest flex items-center gap-1.5 uppercase drop-shadow-sm">
+                <Sparkles className="w-3.5 h-3.5 text-[#D4AF37]" />
+                Oriental Edition
               </span>
             </header>
 
             {/* Main Hero Section */}
-            <MinimalistHero
+            <ChineseHero
               groomName={FAHREIZA_AMANDA_DATA.groom.name}
               brideName={FAHREIZA_AMANDA_DATA.bride.name}
               weddingDate={FAHREIZA_AMANDA_DATA.akad.date}
             />
 
             {/* Continuous Content Container */}
-            <div className="relative w-full z-20 flex flex-col pb-12">
-              <div className="mx-4 my-8 rounded-3xl bg-[#FDFBF7]/90 backdrop-blur-md shadow-xl border border-[#c1a784]/30">
-                <HeaderBismillah />
+            <div className="relative w-full z-20 flex flex-col pb-12 gap-8">
+              <div className="mx-4 rounded-sm bg-transparent border-y border-[#D4AF37]/30 py-6">
+                <ChineseGreeting />
               </div>
 
-            <MinimalistGroomBride
+            <ChineseGroomBride
               groom={{
                 name: FAHREIZA_AMANDA_DATA.groom.name,
                 fullName: FAHREIZA_AMANDA_DATA.groom.fullName,
@@ -206,7 +191,7 @@ function MinimalistContent() {
               }}
             />
 
-            <MinimalistEventSchedule
+            <ChineseEventSchedule
               akad={{
                 title: FAHREIZA_AMANDA_DATA.akad.title,
                 date: FAHREIZA_AMANDA_DATA.akad.date,
@@ -225,18 +210,18 @@ function MinimalistContent() {
               }}
             />
 
-            <MinimalistCountdown targetDate={FAHREIZA_AMANDA_DATA.eventDateISO} />
+            <ChineseCountdown targetDate={FAHREIZA_AMANDA_DATA.eventDateISO} />
 
-            <MinimalistLoveStoryQuote timeline={FAHREIZA_AMANDA_DATA.loveStories} />
+            <ChineseLoveStoryQuote timeline={FAHREIZA_AMANDA_DATA.loveStories} />
 
-            <MinimalistPhotoGallery
+            <ChinesePhotoGallery
               photos={FAHREIZA_AMANDA_DATA.galleryPhotos}
               coupleNames={`${FAHREIZA_AMANDA_DATA.groom.name} & ${FAHREIZA_AMANDA_DATA.bride.name}`}
             />
 
-            <MinimalistRsvpForm initialGuestName={guestNameParam} />
+            <ChineseRsvpForm initialGuestName={guestNameParam} />
 
-            <MinimalistDigitalGift
+            <ChineseDigitalGift
               bankAccounts={FAHREIZA_AMANDA_DATA.bankAccounts}
               qrisUrl={FAHREIZA_AMANDA_DATA.qrisUrl}
               giftAddress={{
@@ -250,9 +235,9 @@ function MinimalistContent() {
             <ClosingSection
               groomName={FAHREIZA_AMANDA_DATA.groom.name}
               brideName={FAHREIZA_AMANDA_DATA.bride.name}
-              accentColor="#c1a784"
-              themeName="Botanical Arch Edition"
-              isLightTheme={true}
+              accentColor="#D4AF37"
+              themeName="Oriental Edition"
+              isLightTheme={false}
             />
           </div>
         )}
@@ -261,18 +246,18 @@ function MinimalistContent() {
   );
 }
 
-export default function MinimalistPage() {
+export default function ChineseDemoPage() {
   return (
     <Suspense
       fallback={
-        <div className="min-h-screen bg-[#FDFBF7] flex items-center justify-center text-[#4A4036]">
-          <p className="text-sm font-semibold tracking-widest uppercase animate-pulse">
-            Memuat Botanical Arch Edition...
+        <div className="min-h-screen bg-[#8A151B] flex items-center justify-center text-[#D4AF37]">
+          <p className="text-sm font-semibold tracking-widest uppercase animate-pulse drop-shadow-[0_0_10px_rgba(212,175,55,0.5)]">
+            Memuat Oriental Edition...
           </p>
         </div>
       }
     >
-      <MinimalistContent />
+      <ChineseContent />
     </Suspense>
   );
 }
