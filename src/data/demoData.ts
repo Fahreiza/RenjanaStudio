@@ -90,3 +90,95 @@ export const FAHREIZA_AMANDA_DATA: WeddingData = {
   qrisUrl: '/assets/images/BAHAN-TEMA-1-1-2.webp',
   giftAddress: 'Jl. Asia Afrika No. 8, Kebayoran Baru, Jakarta Selatan (Up. Fahreiza & Amanda - House of Renjana)',
 };
+
+export const ADITYA_ALYA_DATA: WeddingData = {
+  groom: {
+    name: 'Aditya',
+    fullName: 'Aditya Pratama, S.Ars.',
+    parentInfo: 'Putra Pertama dari Bpk. Ir. Rahmat Hidayat & Ibu Dra. Siti Nurhaliza',
+    instagram: 'adityapratama',
+    photoUrl: '/assets/images/sm-PRIA.webp',
+  },
+  bride: {
+    name: 'Alya',
+    fullName: 'Alya Daniswara, B.Des.',
+    parentInfo: 'Putri Kedua dari Bpk. Dr. Hendro Kusuma & Ibu Hj. Ratna Sari',
+    instagram: 'alyadaniswara',
+    photoUrl: '/assets/images/sm-WANITA.webp',
+  },
+  eventDateISO: '2026-12-12T08:00:00+07:00', // Sabtu, 12 Desember 2026 (12 · 12 · 26)
+  akad: {
+    id: 'akad',
+    title: 'Akad Nikah',
+    date: 'Sabtu, 12 Desember 2026',
+    time: '08.00 WIB - 10.00 WIB',
+    venue: 'The Glass House Conservatory',
+    address: 'Jl. Taman Ethereal No. 12, Kebayoran Baru, Jakarta Selatan',
+    googleMapsUrl: 'https://maps.google.com/?q=The+Glass+House+Jakarta',
+  },
+  resepsi: {
+    id: 'resepsi',
+    title: 'Resepsi Pernikahan',
+    date: 'Sabtu, 12 Desember 2026',
+    time: '11.00 WIB - 15.00 WIB',
+    venue: 'The Grand Botanical Pavilion',
+    address: 'Jl. Taman Ethereal No. 12, Kebayoran Baru, Jakarta Selatan',
+    googleMapsUrl: 'https://maps.google.com/?q=The+Glass+House+Jakarta',
+  },
+  loveStories: [
+    {
+      year: '1',
+      title: 'First Encounter',
+      dateRange: 'Autumn 2023',
+      description: 'Di bawah bayangan dahan eucalyptus sebuah galeri seni rupa, dua percakapan sederhana bermula menjadi janji seumur hidup.',
+      imageUrl: '/assets/images/gallery-1.webp',
+    },
+    {
+      year: '2',
+      title: 'The Commitment',
+      dateRange: 'Spring 2024',
+      description: 'Menemukan kedamaian dalam keselarasan mimpi. Kami memilih melangkah bersama dengan keyakinan yang utuh.',
+      imageUrl: '/assets/images/gallery-2.webp',
+    },
+    {
+      year: '3',
+      title: 'The Proposal',
+      dateRange: 'Summer 2025',
+      description: 'Di tengah taman bunga ranunculus yang merekah, cincin emas sampanye melingkar manis sebagai simbol kesungguhan hati.',
+      imageUrl: '/assets/images/gallery-3.webp',
+    },
+    {
+      year: '4',
+      title: 'The Sacred Vow',
+      dateRange: '12 · 12 · 2026',
+      description: 'Dua jiwa berikrar di hadapan Sang Pencipta dan keluarga tercinta, menyatu dalam ridha dan berkah pernikahan.',
+      imageUrl: '/assets/images/gallery-4.webp',
+    },
+  ],
+  galleryPhotos: [
+    '/assets/images/hero-wedding.webp',
+    '/assets/images/gallery-1.webp',
+    '/assets/images/gallery-2.webp',
+    '/assets/images/gallery-3.webp',
+    '/assets/images/gallery-4.webp',
+    '/assets/images/gallery-5.webp',
+    '/assets/images/gallery-6.webp',
+    '/assets/images/sm-WANITA.webp',
+    '/assets/images/sm-PRIA.webp',
+  ],
+  bankAccounts: [
+    {
+      bankName: 'Bank BCA',
+      accountNumber: '8830192833',
+      accountName: 'Aditya Pratama',
+    },
+    {
+      bankName: 'Bank Mandiri',
+      accountNumber: '1370008741029',
+      accountName: 'Alya Daniswara',
+    },
+  ],
+  qrisUrl: '/assets/images/BAHAN-TEMA-1-1-2.webp',
+  giftAddress: 'The Glass House Conservatory Suite 12, Kebayoran Baru, Jakarta Selatan (Up. Aditya & Alya)',
+};
+

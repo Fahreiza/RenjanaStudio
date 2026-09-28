@@ -177,4 +177,20 @@ export const CATALOG_ITEMS: CatalogItem[] = [
     demoUrl: '/demo/popup-book',
     isPopular: true,
   },
+  {
+    id: 'ethereal-garden',
+    slug: 'ethereal-garden',
+    title: 'Ethereal Garden (3D Double Arch)',
+    category: 'lumina',
+    hasPhoto: true,
+    tag: '🌿 3D Arch',
+    description: 'Desain 3D Double-Layer Arch bergaya editorial luxury! Tekstur kertas ivory premium, frame champagne gold, dedaunan eucalyptus sage melayang, dan wax seal cap stempel lilin.',
+    price: 'Rp 189.000',
+    discountPrice: 'Rp 139.000',
+    colorScheme: ['#F6F0E6', '#C7A76C', '#A7B09A', '#3F493D'],
+    thumbnailUrl: '/assets/images/vintage_wedding_hero_bg.png',
+    demoUrl: '/demo/ethereal-garden',
+    isPopular: true,
+  },
 ];
+
