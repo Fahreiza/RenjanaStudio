@@ -17,6 +17,7 @@ import TerracottaLoveStoryQuote from '@/components/invitation/terracotta/Terraco
 import TerracottaPhotoGallery from '@/components/invitation/terracotta/TerracottaPhotoGallery';
 import TerracottaRsvpForm from '@/components/invitation/terracotta/TerracottaRsvpForm';
 import TerracottaDigitalGift from '@/components/invitation/terracotta/TerracottaDigitalGift';
+import TerracottaQrTicket from '@/components/invitation/terracotta/TerracottaQrTicket';
 
 import HeaderBismillah from '@/components/invitation/HeaderBismillah';
 import ClosingSection from '@/components/invitation/ClosingSection';
@@ -234,6 +235,12 @@ function TerracottaContent() {
                 address: FAHREIZA_AMANDA_DATA.giftAddress,
                 phone: '0812-3456-7890',
               }}
+            />
+
+            <TerracottaQrTicket
+              guestName={guestNameParam}
+              weddingDate={FAHREIZA_AMANDA_DATA.akad.date}
+              venueName={FAHREIZA_AMANDA_DATA.akad.venue}
             />
             </div>
 

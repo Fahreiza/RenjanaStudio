@@ -5,8 +5,9 @@ import { useSearchParams } from 'next/navigation';
 import Link from 'next/link';
 import { ArrowLeft, BookOpen } from 'lucide-react';
 import ThreeDPopUpBook from '@/components/invitation/popup/ThreeDPopUpBook';
+import PopUpCountdown from '@/components/invitation/popup/PopUpCountdown';
+import PopUpQrTicket from '@/components/invitation/popup/PopUpQrTicket';
 import MusicPlayer from '@/components/invitation/MusicPlayer';
-import CountdownTimer from '@/components/invitation/CountdownTimer';
 import LoveStory from '@/components/invitation/LoveStory';
 import PhotoGallery from '@/components/invitation/PhotoGallery';
 import RsvpForm from '@/components/invitation/RsvpForm';
@@ -87,7 +88,7 @@ function PopUpBookContent() {
           <div className="relative z-10 space-y-12 mt-12 animate-fadeIn duration-1000">
             <MusicPlayer isPlaying={isPlayingAudio} onTogglePlay={handleToggleAudio} />
 
-            <CountdownTimer targetDateISO={FAHREIZA_AMANDA_DATA.eventDateISO} />
+            <PopUpCountdown targetDate="2026-11-21T08:00:00" />
 
             <LoveStory stories={FAHREIZA_AMANDA_DATA.loveStories} />
 
@@ -99,6 +100,12 @@ function PopUpBookContent() {
               bankAccounts={FAHREIZA_AMANDA_DATA.bankAccounts}
               qrisUrl={FAHREIZA_AMANDA_DATA.qrisUrl}
               giftAddress={FAHREIZA_AMANDA_DATA.giftAddress}
+            />
+
+            <PopUpQrTicket
+              guestName={guestNameParam}
+              weddingDate={FAHREIZA_AMANDA_DATA.akad.date}
+              venueName={FAHREIZA_AMANDA_DATA.akad.venue}
             />
 
             <ClosingSection
